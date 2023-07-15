@@ -7,7 +7,7 @@ from app.models.schemas.classifier import ClassifierResponseSchema
 
 imageType = Union[Image.Image, Any]
 
-MODEL_BASE = "google/vit-base-patch16-224-in21k"
+MODEL_BASE = "adilsaleem/vit-potatoes-plant-health-status"
 MODEL_NAME = "./mlmodels/vit-potatoes-plant-health-status/"
 
 

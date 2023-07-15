@@ -18,7 +18,9 @@ function Classifier() {
   const uploadImage = useCallback(() => {
     setLoading(true);
     let formData = new FormData();
-    formData.append("file", files![0]);
+    files.forEach(f => {
+      formData.append("file", f);
+    });
 
     fetch("http://localhost:8001/classify", {
       method: "POST",
@@ -81,7 +83,7 @@ function Classifier() {
 
       {results && results.length > 0 && (
         <div className="classifier-group">
-          <Results image={files[0]} results={results} />
+          <Results images={files} results={results} />
           <button onClick={handleTryAgain} className="button-submit">
             Try other
           </button>

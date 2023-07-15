@@ -25,7 +25,7 @@ To do so, the applicant must complete the following tasks:
 
 ### Optional tasks
 
-- [ ] allow to upload and analyze multiple images at once
+- [x] allow to upload and analyze multiple images at once
 - [ ] dockerize the application
 - [ ] deploy the application in a cloud provider
 - [ ] add a new ML functionality to the application

@@ -1,6 +1,6 @@
 import io
 import time
-from typing import Union
+from typing import Union, List
 
 from fastapi import FastAPI, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -35,12 +35,14 @@ async def read_root():
 
 
 @app.post("/classify", tags=["Image Classification"])
-async def classify(file: Union[UploadFile, None] = None):
-    if not file:
-        return ResponseModel(message="No file sent", success=False)
+async def classify(file: List[Union[UploadFile, None]] = None):
+    results = []
+    for f in file:
+        if not f:
+            return ResponseModel(message="No file sent", success=False)
 
-    content = await file.read()
-    image = Image.open(io.BytesIO(content))
-    result = Classifier.predict(image)
-
-    return ResponseModel(data=result, message="Successful classification")
+        content = await f.read()
+        image = Image.open(io.BytesIO(content))
+        results.append(Classifier.predict(image))
+    
+    return ResponseModel(data=results, message="Successful classification")

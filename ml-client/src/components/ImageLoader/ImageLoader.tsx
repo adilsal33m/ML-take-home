@@ -46,6 +46,7 @@ const ImageLoader = (props: ImageResultProps) => {
             onChange={handleFile}
             className="opacity-0"
             name="files[]"
+            multiple
           />
         </label>
       </div>

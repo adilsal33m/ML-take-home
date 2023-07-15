@@ -11,8 +11,8 @@ def test_classify_healthy(app_client):
     )
     assert response.status_code == 200
     assert response.json()["message"] == "Successful classification"
-    assert response.json()["data"][0]["label"] == "Healthy"
-    assert response.json()["data"][0]["score"] > 0.9
+    assert response.json()["data"][0][0]["label"] == "Healthy"
+    assert response.json()["data"][0][0]["score"] > 0.9
 
 
 def test_classify_early_blight(app_client):
@@ -22,8 +22,8 @@ def test_classify_early_blight(app_client):
     )
     assert response.status_code == 200
     assert response.json()["message"] == "Successful classification"
-    assert response.json()["data"][0]["label"] == "Early_Blight"
-    assert response.json()["data"][0]["score"] > 0.9
+    assert response.json()["data"][0][0]["label"] == "Early_Blight"
+    assert response.json()["data"][0][0]["score"] > 0.9
 
 
 def test_classify_late_blight(app_client):
@@ -33,5 +33,5 @@ def test_classify_late_blight(app_client):
     )
     assert response.status_code == 200
     assert response.json()["message"] == "Successful classification"
-    assert response.json()["data"][0]["label"] == "Late_Blight"
-    assert response.json()["data"][0]["score"] > 0.9
+    assert response.json()["data"][0][0]["label"] == "Late_Blight"
+    assert response.json()["data"][0][0]["score"] > 0.9

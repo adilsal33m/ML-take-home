@@ -13,15 +13,15 @@ To do so, the applicant must complete the following tasks:
 
 ### Mandatory Tasks
 
-- [ ] select a machine learning model to classify images
+- [x] select a machine learning model to classify images
 - we recommend you to use the `google/vit-base-patch16-224-in21k` model (it'll automatically be downloaded when you run
   the `main.py` script), but you are free to use any other model you want
-- [ ] fine-tune the selected model on [the provided dataset](./dataset) so that it can classify potatoes health status
+- [x] fine-tune the selected model on [the provided dataset](./dataset) so that it can classify potatoes health status
 - write the resulting code in the `train.py` file
 - save the resulting model in the `mlmodels` folder
 - update the `classifier.py` service to load the model if required
-- [ ] use the fine-tuned model to classify potatoes leaves
-- [ ] run the backend tests and make sure they pass
+- [x] use the fine-tuned model to classify potatoes leaves
+- [x] run the backend tests and make sure they pass
 
 ### Optional tasks
 
@@ -78,5 +78,3 @@ The project structure is as follows:
   the `train.py`file.
 - You can add additional files to the REST API to complete your implementation if required, especially if you use a tool
   other than transformers. You will probably need to adapt it to the server
-
-

@@ -34,12 +34,6 @@ def get_preprocessors():
 
     return (feature_extractor, transforms)
 
-
-def update_learning_rate(optimizer, lr):
-    for param_group in optimizer.param_groups:
-        param_group['lr'] = lr
-
-
 def calculate_learning_rate(val):
     if val == 1:
         return 5e-5

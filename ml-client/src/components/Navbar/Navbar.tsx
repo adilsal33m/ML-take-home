@@ -10,6 +10,15 @@ const Navbar = () => {
       </div>
 
       <div className="links">
+        <a href="#classifier">
+          Classifier
+        </a>
+        <a href="#similarity">
+          Similar Image Finder
+        </a>
+      </div>
+
+      <div className="links">
         <a target="_blank" href="https://monadical.com/principles.html">
           Principles
         </a>

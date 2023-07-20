@@ -16,6 +16,9 @@ COPY ./app /code/app
 #
 COPY ./mlmodels /code/mlmodels
 
+#
+COPY ./db /code/db
+
 # 
 EXPOSE 8001
 CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "8001"]

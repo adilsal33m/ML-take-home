@@ -3,7 +3,7 @@ import time
 from typing import Union, List
 
 from fastapi import FastAPI, UploadFile
-from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.cors import CORSMiddleware
 from PIL import Image
 
 from app.models.response import ResponseModel
